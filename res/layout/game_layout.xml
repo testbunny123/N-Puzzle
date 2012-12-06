@@ -1,0 +1,43 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/game_linear_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+   <LinearLayout
+       android:layout_weight="12"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:orientation="vertical"
+   >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="N-Puzzle"
+        android:textSize="44sp"
+        android:gravity="center"
+        />
+   
+	</LinearLayout>
+	
+   <LinearLayout
+       android:id="@+id/game_area"
+       android:layout_marginTop="60dp"
+       android:layout_weight="3"
+       android:layout_height="fill_parent"
+       android:layout_width="fill_parent"
+       android:background="@drawable/wood2"
+       >
+	<TableLayout
+	    android:layout_weight="1"
+	    android:layout_width="0dp"
+	    android:layout_height="fill_parent"
+	    >
+
+     </TableLayout>
+   </LinearLayout>
+</LinearLayout>

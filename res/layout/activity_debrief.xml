@@ -1,0 +1,75 @@
+<LinearLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:background="@color/background"
+   android:gravity="center"
+   android:padding="35dip">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dip"
+        android:text="Level Complete!"
+        android:textSize="24.5sp" />
+
+    <TableLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+		<TableRow >
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Time: " />
+	
+	        <TextView
+	            android:id="@+id/time_value_tv"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right"
+	            android:gravity="right"
+	            android:text="34 seconds" />
+		</TableRow>
+		<TableRow>
+		    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Moves used: " />
+
+	        <TextView
+	            android:id="@+id/moves_tv"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="right"
+	            android:gravity="right"
+	            android:text="7" />
+        </TableRow>
+		
+		<TableRow>
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level Score: " />
+	        
+	        <TextView
+	        android:id="@+id/score_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:text="642" />
+		    
+		</TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/next_stage_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Stage" />
+
+</LinearLayout>
