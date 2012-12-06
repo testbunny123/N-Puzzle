@@ -37,8 +37,7 @@ public class HiScoresActivity extends Activity {
        
         
         String query = "SELECT *" +
-        		"FROM players" +
-        		"WHERE HANDLE='bob';";
+        		"FROM scores, players where scores.PLAYER_ID=players.PLAYER_ID;";
         
         Cursor cursor = db.rawQuery( query, null );
         cursor.moveToFirst();
