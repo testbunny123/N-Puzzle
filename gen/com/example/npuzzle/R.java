@@ -28,22 +28,49 @@ public final class R {
     }
     public static final class drawable {
         public static final int background=0x7f020000;
-        public static final int ic_action_search=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int jo=0x7f020003;
-        public static final int wood=0x7f020004;
-        public static final int wood2=0x7f020005;
+        public static final int background1=0x7f020001;
+        public static final int background2=0x7f020002;
+        public static final int ff7=0x7f020003;
+        public static final int ic_action_search=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int jo=0x7f020006;
+        public static final int wood=0x7f020007;
+        public static final int wood2=0x7f020008;
     }
     public static final class id {
-        public static final int game_area=0x7f090007;
-        public static final int game_linear_layout=0x7f090006;
-        public static final int menu_settings=0x7f090008;
+        public static final int TextView03=0x7f090009;
+        public static final int game_area=0x7f09001f;
+        public static final int game_linear_layout=0x7f09001e;
+        public static final int menu_settings=0x7f090020;
         public static final int moves_tv=0x7f090002;
         public static final int next_stage_btn=0x7f090004;
-        public static final int play_button=0x7f090005;
-        public static final int quit_game=0x7f090009;
+        public static final int play_button=0x7f09001d;
+        public static final int player1=0x7f090005;
+        public static final int player2=0x7f09000c;
+        public static final int player3=0x7f09000f;
+        public static final int player4=0x7f090012;
+        public static final int player5=0x7f090015;
+        public static final int player6=0x7f090018;
+        public static final int player7=0x7f09001b;
+        public static final int quit_game=0x7f090021;
+        public static final int score1=0x7f09000a;
+        public static final int score2=0x7f09000d;
+        public static final int score3=0x7f090010;
+        public static final int score4=0x7f090013;
+        public static final int score5=0x7f090016;
+        public static final int score6=0x7f090019;
+        public static final int score7=0x7f09001c;
         public static final int score_tv=0x7f090003;
+        public static final int tableRow1=0x7f090006;
+        public static final int tableRow2=0x7f090008;
+        public static final int tableRow3=0x7f09000b;
+        public static final int tableRow4=0x7f09000e;
+        public static final int tableRow5=0x7f090011;
+        public static final int tableRow6=0x7f090014;
+        public static final int tableRow7=0x7f090017;
+        public static final int tableRow8=0x7f09001a;
         public static final int textView1=0x7f090000;
+        public static final int textView2=0x7f090007;
         public static final int time_value_tv=0x7f090001;
     }
     public static final class layout {
