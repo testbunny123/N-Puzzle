@@ -125,6 +125,7 @@ public class PuzzleView extends View implements Animation.AnimationListener {
 		Intent intent = new Intent( ( Context ) puzzle, DebriefActivity.class );
 		intent.putExtra( "time", puzzle.getTime() );
 		intent.putExtra( "moves", puzzle.getMoves() );
+		intent.putExtra( "totalScore", puzzle.getTotalScore( ) );
 		
 		// When max level achieved, game is over
 		boolean maxed = puzzle.increaseDifficulty();

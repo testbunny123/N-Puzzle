@@ -14,20 +14,43 @@ import android.widget.TextView;
 public class HiScoresActivity extends Activity
 {
 
-    private DBHelper dbhelper;
-    private TextView players[];
-    private TextView scores[];
+    private SQLiteDatabase db;
+    private TextView players[] = new TextView[ 7 ];
+    private TextView scores[] = new TextView[ 7 ];
+    private Score totalScore;
 
     @Override
     public void onCreate( Bundle savedInstanceState )
     {
 	super.onCreate( savedInstanceState );
 	setContentView( R.layout.activity_hi_scores );
+	
+	Bundle extras = getIntent().getExtras( );
+	totalScore = ( Score )extras.getSerializable( "totalScore" );
 
 	initTextFields( );
-	dbhelper = new DBHelper( this );
+	DBHelper dbhelper = new DBHelper( this );
+	db = dbhelper.getWritableDatabase( );
 
 	List<Score> scores_list = getScores( );
+
+	writeScores( scores_list );
+	checkPlayerScore( scores_list );
+    }
+
+    private void checkPlayerScore( List<Score> scores_list )
+    {
+	int minScore = scores_list.get( scores_list.size( ) - 1 ).getScore( );
+	int playerScore = totalScore.getScore( );
+	if ( playerScore > minScore )
+	{
+	    String query = "INSERT INTO scores (PLAYER_ID, SCORE) VALUES ( 3, " + playerScore + ");";
+	    db.rawQuery( query, null );
+	}
+    }
+
+    private void writeScores( List<Score> scores_list )
+    {
 
 	Score current;
 	for ( int i = 0; i < scores_list.size( ); i++ )
@@ -67,9 +90,6 @@ public class HiScoresActivity extends Activity
     public List<Score> getScores( )
     {
 	List<Score> ret = new ArrayList<Score>( );
-
-	dbhelper = new DBHelper( this );
-	SQLiteDatabase db = dbhelper.getWritableDatabase( );
 
 	String query = "SELECT *" + "FROM scores, players "
 		+ "where scores.PLAYER_ID=players.PLAYER_ID "

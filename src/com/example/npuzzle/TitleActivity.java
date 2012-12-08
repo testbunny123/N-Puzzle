@@ -19,6 +19,8 @@ public class TitleActivity extends Activity {
 			
 			public void onClick(View v) {
 				Intent intent = new Intent( v.getContext(), Puzzle.class );
+				Score totalScore = new Score( );
+				intent.putExtra( "totalScore", totalScore);
 				startActivity( intent );
 			}
 		});

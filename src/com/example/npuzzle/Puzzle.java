@@ -14,13 +14,13 @@ public class Puzzle extends Activity
 {
     private static final int DIRECTIONS = 4;
 
-    // private Shuffler shuffler;
     private PuzzleView puzzleView;
 
     private int tiles[][];
     private int empty_i;
     private int empty_j;
     private int N;
+    private Score totalScore;
 
     private Difficulty difficulty;
 
@@ -36,6 +36,9 @@ public class Puzzle extends Activity
 	View game_layout = inflater.inflate( R.layout.game_layout, null );
 	LinearLayout game_area = (LinearLayout) game_layout
 		.findViewById( R.id.game_area );
+
+	Bundle extras = getIntent( ).getExtras( );
+	totalScore =  (Score) extras.getSerializable( "totalScore" ) ;
 
 	puzzleView = new PuzzleView( this );
 	game_area.addView( puzzleView );
@@ -58,7 +61,7 @@ public class Puzzle extends Activity
 
 	for ( int i = 0; i < shuffles; i++ )
 	{
-	    dir = (int) (DIRECTIONS * Math.random( ));
+	    dir = (int) ( DIRECTIONS * Math.random( ) );
 	    switch ( dir )
 	    {
 	    case 0:
@@ -190,6 +193,11 @@ public class Puzzle extends Activity
     public boolean increaseDifficulty( )
     {
 	return difficulty.next( );
+    }
+
+    public Score getTotalScore( )
+    {
+	return totalScore;
     }
 
 }

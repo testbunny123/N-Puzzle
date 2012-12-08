@@ -1,22 +1,40 @@
 package com.example.npuzzle;
 
-public class Score {
-	private int score;
-	private String player;
-	
-	public String getPlayer() {
-		return player;
-	}
-	
-	public void setPlayer(String player) {
-		this.player = player;
-	}
+import java.io.Serializable;
 
-	public int getScore() {
-		return score;
-	}
+public class Score implements Serializable
+{
+    private int score;
+    private String player;
 
-	public void setScore(int score) {
-		this.score = score;
-	}
+    public Score()
+    {
+	score = 0;
+	player = "Guest";
+    }
+
+    public String getPlayer( )
+    {
+	return player;
+    }
+
+    public void setPlayer( String player )
+    {
+	this.player = player;
+    }
+
+    public int getScore( )
+    {
+	return score;
+    }
+
+    public void setScore( int score )
+    {
+	this.score = score;
+    }
+
+    public void increase( float time, int moves )
+    {
+	score += 8200 / ( (int) time + moves );
+    }
 }
