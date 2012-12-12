@@ -1,20 +1,45 @@
-<LinearLayout
-   xmlns:android="http://schemas.android.com/apk/res/android"
-   android:orientation="vertical"
-   android:layout_width="fill_parent"
-   android:layout_height="fill_parent"
-   android:background="@color/background"
-   android:gravity="center"
-   android:padding="30dip">
-   <TextView
-      android:text="N Puzzle"
-      android:layout_height="wrap_content"
-      android:layout_width="wrap_content"
-      android:layout_marginBottom="25dip"
-      android:textSize="24.5sp" />
-   <Button
-      android:id="@+id/play_button"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:text="Play" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/ff7"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dip" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dip"
+        android:text="N Puzzle"
+        android:textColor="@color/hi_score_entry"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/play_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/scores_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="High Scores"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/about_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/quit_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Quit"
+        android:textColor="#FFFFFF" />
+
 </LinearLayout>

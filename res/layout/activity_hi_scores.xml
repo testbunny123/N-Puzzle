@@ -1,36 +1,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    android:padding="66dp" >
-
+    android:padding="36dp" >
+
     <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="5dp" >
 
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-		>
+            android:layout_height="wrap_content" >
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 android:text="Player"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:padding="20dp"
                 android:textColor="@color/hi_score_text" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 android:text="Score"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/hi_score_text"
-                android:padding="20dp" />
-            
+                android:textColor="@color/hi_score_text" />
         </TableRow>
 
         <TableRow
@@ -44,170 +44,171 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="---"
-                android:textColor="@color/hi_score_entry"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
+
             <TextView
                 android:id="@+id/score1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="@color/hi_score_entry"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
+
             <TextView
                 android:id="@+id/player2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="@color/hi_score_entry"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
+
             <TextView
                 android:id="@+id/score2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="@color/hi_score_entry"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
         </TableRow>
-
+
         <TableRow
             android:id="@+id/tableRow4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
+
             <TextView
                 android:id="@+id/player3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
+
             <TextView
                 android:id="@+id/score3"
                 android:layout_width="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
         </TableRow>
-
+
         <TableRow
             android:id="@+id/tableRow5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
+
             <TextView
                 android:id="@+id/player4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
+
             <TextView
                 android:id="@+id/score4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
         </TableRow>
-
+
         <TableRow
             android:id="@+id/tableRow6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
+
             <TextView
                 android:id="@+id/player5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
+
             <TextView
                 android:id="@+id/score5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
         </TableRow>
-
+
         <TableRow
             android:id="@+id/tableRow7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
+
             <TextView
                 android:id="@+id/player6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
+
             <TextView
                 android:id="@+id/score6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
         </TableRow>
-
+
         <TableRow
             android:id="@+id/tableRow8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
+
             <TextView
                 android:id="@+id/player7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
+
             <TextView
                 android:id="@+id/score7"
                 android:layout_width="wrap_content"
-                android:textColor="@color/hi_score_entry"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="---"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/hi_score_entry" />
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="100dp"
+        android:text="Back" />
 
 </LinearLayout>

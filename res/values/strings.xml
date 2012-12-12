@@ -9,5 +9,6 @@
     <string name="title_activity_debrief">TODO</string>
     <string name="title_activity_hi_scores">HiScoresActivity</string>
     <string name="title_activity_title">TitleActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
 
 </resources>

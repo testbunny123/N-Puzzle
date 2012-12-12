@@ -95,20 +95,21 @@ public class Puzzle extends Activity
     @Override
     public boolean onCreateOptionsMenu( Menu menu )
     {
-	getMenuInflater( ).inflate( R.menu.activity_main, menu );
+	//getMenuInflater( ).inflate( R.menu.activity_main, menu );
 	return true;
     }
 
     @Override
     public boolean onOptionsItemSelected( MenuItem item )
     {
+	/*
 	switch ( item.getItemId( ) )
 	{
 	case R.id.quit_game:
 
 	    break;
 	}
-
+	*/
 	return true;
     }
 

@@ -1,41 +1,67 @@
 package com.example.npuzzle;
 
+import android.app.AlertDialog.Builder;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class HiScoresActivity extends Activity
 {
-
+    private Cursor cursor;
     private SQLiteDatabase db;
     private TextView players[] = new TextView[ 7 ];
     private TextView scores[] = new TextView[ 7 ];
     private Score totalScore;
+    private DBHelper dbhelper;
 
     @Override
     public void onCreate( Bundle savedInstanceState )
     {
 	super.onCreate( savedInstanceState );
 	setContentView( R.layout.activity_hi_scores );
-	
-	Bundle extras = getIntent().getExtras( );
-	totalScore = ( Score )extras.getSerializable( "totalScore" );
+
+	Bundle extras = getIntent( ).getExtras( );
+	totalScore = (Score) extras.getSerializable( "totalScore" );
 
 	initTextFields( );
-	DBHelper dbhelper = new DBHelper( this );
-	db = dbhelper.getWritableDatabase( );
+	dbhelper = new DBHelper( this );
 
+	// Check if score is high score
 	List<Score> scores_list = getScores( );
-
-	writeScores( scores_list );
 	checkPlayerScore( scores_list );
+
+	// Update score list again in case. Write scores to the screen.
+	List<Score> updated = getScores( );
+	writeScores( updated );
+
+	Button back_button = (Button) findViewById( R.id.back_button );
+	back_button.setOnTouchListener( new OnTouchListener( )
+	{
+
+	    public boolean onTouch( View v, MotionEvent event )
+	    {
+		Intent intent = new Intent( v.getContext( ),
+			TitleActivity.class );
+		startActivity( intent );
+		return false;
+	    }
+
+	} );
     }
 
     private void checkPlayerScore( List<Score> scores_list )
@@ -44,8 +70,28 @@ public class HiScoresActivity extends Activity
 	int playerScore = totalScore.getScore( );
 	if ( playerScore > minScore )
 	{
-	    String query = "INSERT INTO scores (PLAYER_ID, SCORE) VALUES ( 3, " + playerScore + ");";
-	    db.rawQuery( query, null );
+	    final String handle;
+	    AlertDialog.Builder alert = new AlertDialog.Builder( this );
+	    alert.setTitle( "New high score!" );
+	    alert.setMessage( "Enter your name" );
+	    final EditText input = new EditText( this );
+	    alert.setView( input );
+
+	    alert.setPositiveButton( "Ok",
+		    new DialogInterface.OnClickListener( )
+		    {
+			public void onClick( DialogInterface dialog,
+				int whichButton )
+			{
+			    String name = input.getText( ).toString( );
+			    dbhelper.addPlayer( name );
+			    dbhelper.addScore( totalScore,
+				    dbhelper.getPid( name ) );
+			}
+		    } );
+
+	    alert.show( );
+
 	}
     }
 
@@ -53,7 +99,7 @@ public class HiScoresActivity extends Activity
     {
 
 	Score current;
-	for ( int i = 0; i < scores_list.size( ); i++ )
+	for ( int i = 0; i < Math.min( players.length, scores_list.size( ) ); i++ )
 	{
 	    current = scores_list.get( i );
 	    players[ i ].setText( current.getPlayer( ) );
@@ -89,25 +135,31 @@ public class HiScoresActivity extends Activity
 
     public List<Score> getScores( )
     {
+	db = dbhelper.getWritableDatabase( );
+
 	List<Score> ret = new ArrayList<Score>( );
 
 	String query = "SELECT *" + "FROM scores, players "
 		+ "where scores.PLAYER_ID=players.PLAYER_ID "
 		+ "ORDER BY scores.SCORE DESC;";
 
-	Cursor cursor = db.rawQuery( query, null );
+	cursor = db.rawQuery( query, null );
 
 	if ( cursor.moveToFirst( ) )
 	{
+	    int i = 0;
 	    do
 	    {
 		Score score = new Score( );
 		score.setPlayer( cursor.getString( 4 ) );
 		score.setScore( cursor.getInt( 2 ) );
 		ret.add( score );
-	    } while ( cursor.moveToNext( ) );
+		i++;
+	    } while ( cursor.moveToNext( ) && i < 7 );
 
 	}
+
+	db.close( );
 
 	return ret;
     }
